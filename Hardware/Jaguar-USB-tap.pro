@@ -1,4 +1,4 @@
-update=Mon 20 Nov 2017 10:02:10 AM CST
+update=Mon 20 Nov 2017 12:42:47 PM CST
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=STM32F070F6/stm32f070f6
+LibName31=TXB0106/txb0106
