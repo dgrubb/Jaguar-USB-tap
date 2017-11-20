@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name DB15-SPC15430)(type KiCad)(uri "$(KIPRJMOD)/DB15-SPC15430")(options "")(descr ""))
+  (lib (name STM32F070F6)(type KiCad)(uri "$(KIPRJMOD)/STM32F070F6")(options "")(descr ""))
+  (lib (name TXB0106)(type KiCad)(uri "$(KIPRJMOD)/TXB0106")(options "")(descr ""))
+)
