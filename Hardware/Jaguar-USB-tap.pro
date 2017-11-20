@@ -1,4 +1,4 @@
-update=Sun 19 Nov 2017 10:35:55 PM CST
+update=Mon 20 Nov 2017 10:02:10 AM CST
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -56,5 +58,4 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-[general]
-version=1
+LibName30=STM32F070F6/stm32f070f6
