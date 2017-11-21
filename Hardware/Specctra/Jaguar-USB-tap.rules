@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 3286)
+    (start_pass_no 3680)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -67,7 +67,7 @@
     "R6_VCC" "R5_VCC" "R4_VCC" "R3_VCC" "Net-(J1-Pad8)" "R1_VCC" "Net-(J1-Pad5)" "C4_VCC"
     "C3_VCC" "C2_VCC" "C1_VCC" D+ "D-" "R6_VDD" "R5_VDD" NRST
     "Net-(R2-Pad1)" "Net-(R3-Pad2)" OE "R4_VDD" "R1_VDD" "C4_VDD" "C3_VDD" "C2_VDD"
-    "C1_VDD" "R3_VDD" "R2_VDD" "Net-(U4-Pad10)" "Net-(U4-Pad11)" "Net-(U4-Pad6)" "Net-(U4-Pad7)"
+    "C1_VDD" "R3_VDD" "R2_VDD" "Net-(U4-Pad10)" "Net-(U4-Pad11)" "Net-(U4-Pad6)" "Net-(U4-Pad7)" "Net-(D2-Pad2)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule

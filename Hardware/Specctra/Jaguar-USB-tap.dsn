@@ -52,6 +52,7 @@
       (place C9 120650 -58420 front 90 (PN 0.1uF))
       (place C10 140970 -97790 front 90 (PN 0.1uF))
       (place C11 132080 -97790 front 270 (PN 0.1uF))
+      (place C12 144780 -90170 front 180 (PN 0.1uF))
     )
     (component Capacitors_SMD:c_elec_4x5.3
       (place C3 129540 -66040 front 0 (PN 10uF))
@@ -59,15 +60,16 @@
     )
     (component LEDs:LED_1206
       (place D1 124460 -46990 front 0 (PN LED))
+      (place D2 121920 -81280 front 270 (PN LED))
     )
     (component "DB15-SPC15430:conn_SPC15430"
       (place J1 137160 -109220 front 180 (PN DB15))
     )
     (component Pin_Headers:Pin_Header_Straight_1x03
-      (place P1 138430 -55880 front 270 (PN CONN_01X03))
+      (place P1 138430 -57150 front 270 (PN CONN_01X03))
     )
     (component Connect:USB_B
-      (place P2 135890 -50800 front 90 (PN USB_B))
+      (place P2 135890 -52070 front 90 (PN USB_B))
     )
     (component Pin_Headers:Pin_Header_Straight_1x05
       (place P3 148590 -73660 front 0 (PN CONN_01X05))
@@ -76,6 +78,7 @@
       (place R1 124460 -50800 front 180 (PN 650))
       (place R2 132080 -90170 front 180 (PN 200K))
       (place R3 138430 -72390 front 180 (PN 10K))
+      (place R4 121920 -88900 front 90 (PN 650))
     )
     (component "TO_SOT_Packages_SMD:SOT-223"
       (place U1 127000 -58420 front 0 (PN NCP1117ST33T3G))
@@ -414,7 +417,7 @@
     )
     (net GNDREF
       (pins C1-2 C2-2 C3-2 C4-2 C5-2 C6-2 C7-2 C8-2 C9-2 C10-2 C11-2 D1-1 J1-9 P1-3
-        P2-4 P2-5 P2-5@1 P3-3 R3-1 U1-1 U2-15 U3-9 U4-9)
+        P2-4 P2-5 P2-5@1 P3-3 R3-1 U1-1 U2-15 U3-9 U4-9 C12-2 D2-1)
     )
     (net "Net-(C2-Pad1)"
       (pins C2-1 R2-2 Y1-2)
@@ -423,7 +426,7 @@
       (pins C3-1 C10-1 C11-1 J1-7 P1-2 P2-1 U1-3 U3-15 U4-15)
     )
     (net VDD
-      (pins C4-1 C5-1 C6-1 C7-1 C8-1 C9-1 P1-1 P3-1 R1-1 U1-2 U2-16 U2-5 U3-2 U4-2)
+      (pins C4-1 C5-1 C6-1 C7-1 C8-1 C9-1 P1-1 P3-1 R1-1 U1-2 U2-16 U3-2 U4-2)
     )
     (net "Net-(D1-Pad2)"
       (pins D1-2 R1-2)
@@ -480,7 +483,7 @@
       (pins P3-4 U2-19 U4-4)
     )
     (net NRST
-      (pins P3-5)
+      (pins P3-5 U2-5 C12-1)
     )
     (net "Net-(R2-Pad1)"
       (pins R2-1 U2-3)
@@ -489,7 +492,7 @@
       (pins R3-2 U2-1)
     )
     (net OE
-      (pins U2-14 U3-8 U4-8)
+      (pins U2-14 U3-8 U4-8 R4-1)
     )
     (net R4_VDD
       (pins U2-13 U4-3)
@@ -527,11 +530,14 @@
     (net "Net-(U4-Pad7)"
       (pins U4-7)
     )
+    (net "Net-(D2-Pad2)"
+      (pins D2-2 R4-2)
+    )
     (class kicad_default "" C1_VCC C1_VDD C2_VCC C2_VDD C3_VCC C3_VDD C4_VCC
       C4_VDD D+ "D-" GNDREF NRST "Net-(C1-Pad1)" "Net-(C2-Pad1)" "Net-(D1-Pad2)"
-      "Net-(J1-Pad15)" "Net-(J1-Pad5)" "Net-(J1-Pad8)" "Net-(R2-Pad1)" "Net-(R3-Pad2)"
-      "Net-(U4-Pad10)" "Net-(U4-Pad11)" "Net-(U4-Pad6)" "Net-(U4-Pad7)" OE
-      R1_VCC R1_VDD R2_VCC R2_VDD R3_VCC R3_VDD R4_VCC R4_VDD R5_VCC R5_VDD
+      "Net-(D2-Pad2)" "Net-(J1-Pad15)" "Net-(J1-Pad5)" "Net-(J1-Pad8)" "Net-(R2-Pad1)"
+      "Net-(R3-Pad2)" "Net-(U4-Pad10)" "Net-(U4-Pad11)" "Net-(U4-Pad6)" "Net-(U4-Pad7)"
+      OE R1_VCC R1_VDD R2_VCC R2_VDD R3_VCC R3_VDD R4_VCC R4_VDD R5_VCC R5_VDD
       R6_VCC R6_VDD VCC VDD
       (circuit
         (use_via Via[0-1]_600:400_um)
