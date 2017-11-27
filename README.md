@@ -2,7 +2,7 @@
 
 ![Atari Jaguar logo](./preview/Atari-Jaguar-logo.png)
 
-The [controller](https://atariage.com/controller_page.html?ControllerID=21&SystemID=JAGUAR) for the [Atari Jaguar](https://en.wikipedia.org/wiki/Atari_Jaguar) game console is a strange beast and doesn't map well to modern controllers (in large part due to the numeric keypad). This makes emulating games on a PC with off-the-shelf controllers, which usuall mimic PlayStation or XBox layouts, somewhat cumbersome. One possible solution is to create a device which can convert the Jaguar controller's pinout and signals to a USB HID device.
+The [controller](https://atariage.com/controller_page.html?ControllerID=21&SystemID=JAGUAR) for the [Atari Jaguar](https://en.wikipedia.org/wiki/Atari_Jaguar) game console is a strange beast and doesn't map well to modern controllers (in large part due to the numeric keypad). This makes emulating games on a PC with off-the-shelf controllers, which usually mimic PlayStation or XBox layouts, somewhat cumbersome. One possible solution is to create a device which can convert the Jaguar controller's pinout and signals to a USB HID device.
 
 ## Hardware
 
