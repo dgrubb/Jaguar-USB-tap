@@ -1,7 +1,7 @@
 (kicad_pcb (version 4) (host pcbnew 4.0.2+dfsg1-stable)
 
   (general
-    (links 0)
+    (links 81)
     (no_connects 0)
     (area 116.764999 44.374999 156.915001 114.525001)
     (thickness 1.6)
@@ -14,8 +14,8 @@
 
   (page A4)
   (layers
-    (0 F.Cu signal hide)
-    (31 B.Cu signal hide)
+    (0 F.Cu signal)
+    (31 B.Cu signal)
     (32 B.Adhes user)
     (33 F.Adhes user)
     (34 B.Paste user)
