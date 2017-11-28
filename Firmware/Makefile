@@ -74,7 +74,7 @@ GDB_CMDS += -ex "c"
 
 OBJS =  main.o
 # STM32 platform related
-OBJS += handlers.o startup.o
+# OBJS += handlers.o startup.o
 
 ###############################################################################
 # ST and ARM libraries
