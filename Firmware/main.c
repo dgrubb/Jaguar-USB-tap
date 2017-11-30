@@ -10,6 +10,7 @@ int main(void)
 
     /* Configure the system clock to 48 MHz */
     SystemClock_Config();
+    gpio_init();
 
     while (1) {
     }
