@@ -10,14 +10,10 @@
 #define _GPIO_H
 
 #include <stdint.h>
-
-typedef enum {
-    GPIO_CLOCK_PIN_IN,
-    GPIO_CLOCK_PIN_OUT
-} gpio_clock_pin_t;
+#include "stm32f0xx_hal_gpio.h"
 
 void gpio_init();
-void gpio_set_pin(gpio_clock_pin_t pin, uint8_t value);
+void gpio_get_pin(uint16_t pin, GPIO_PinState *value);
 
 #endif /* _GPIO_H */
 

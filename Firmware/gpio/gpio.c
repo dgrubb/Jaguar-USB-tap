@@ -7,7 +7,6 @@
  */
 
 #include "gpio.h"
-#include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_rcc.h"
 
 void gpio_init()
@@ -17,15 +16,14 @@ void gpio_init()
     __HAL_RCC_GPIOA_CLK_ENABLE();
 
     GPIO_InitStructure.Pin = GPIO_PIN_All;
-    GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING_FALLING;
+    GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
     GPIO_InitStructure.Pull = GPIO_PULLUP;
     GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
-void gpio_set_pin(uint8_t pin, uint8_t value)
+void gpio_get_pin(uint16_t pin, GPIO_PinState *value)
 {
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, (value ? GPIO_PIN_SET : GPIO_PIN_RESET));
+    *value = HAL_GPIO_ReadPin(GPIOA, pin);
 }
-
 

@@ -5,6 +5,8 @@
 
 void SystemClock_Config(void);
 
+
+
 int main(void)
 {
     HAL_Init();
@@ -15,6 +17,11 @@ int main(void)
 
     while (1) {
     }
+}
+
+void SysTick_Handler(void)
+{
+    HAL_IncTick();
 }
 
 /**
