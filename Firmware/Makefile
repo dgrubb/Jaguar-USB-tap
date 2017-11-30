@@ -74,6 +74,7 @@ GDB_CMDS += -ex "c"
 
 OBJS =  main.o
 OBJS += gpio/gpio.o
+OBJS += jaguar/jaguar-controller.o
 # STM32 platform related
 OBJS += handlers.o startup.o
 

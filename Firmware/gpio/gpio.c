@@ -27,3 +27,8 @@ void gpio_get_pin(uint16_t pin, GPIO_PinState *value)
     *value = HAL_GPIO_ReadPin(GPIOA, pin);
 }
 
+void gpio_set_pin(uint16_t pin, GPIO_PinState value)
+{
+    HAL_GPIO_WritePin(GPIOB, pin, value);
+}
+
