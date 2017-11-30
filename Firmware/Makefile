@@ -4,11 +4,11 @@
 # 
 # Usage:
 #
-# make			# Build the project
-# make clean	# Delete compiled objects
-# make upload	# Use OpenOCD to program the target device
-# make debug	# Open a debugging session with the target
-# make run_gdb	
+# make          # Build the project
+# make clean    # Delete compiled objects
+# make upload   # Use OpenOCD to program the target device
+# make debug    # Open a debugging session with the target
+# make run_gdb  # Connect to a debugging session
 
 ###############################################################################
 # Tool aliases
