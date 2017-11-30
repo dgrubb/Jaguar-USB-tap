@@ -1,10 +1,8 @@
 /**
   ******************************************************************************
-  * @file    stm32f0xx_hal_conf_template.h
+  * @file    stm32f0xx_hal_conf.h
   * @author  MCD Application Team
-  * @brief   HAL configuration template file. 
-  *          This file should be copied to the application folder and renamed
-  *          to stm32f0xx_hal_conf.h.
+  * @brief   HAL configuration file.
   ******************************************************************************
   * @attention
   *
@@ -51,32 +49,32 @@
   * @brief This is the list of modules to be used in the HAL driver 
   */
 #define HAL_MODULE_ENABLED
-#define HAL_ADC_MODULE_ENABLED
-#define HAL_CAN_MODULE_ENABLED
-#define HAL_CEC_MODULE_ENABLED
-#define HAL_COMP_MODULE_ENABLED
+/* #define HAL_ADC_MODULE_ENABLED */
+/* #define HAL_CAN_MODULE_ENABLED */
+/* #define HAL_CEC_MODULE_ENABLED */
+/* #define HAL_COMP_MODULE_ENABLED */
 #define HAL_CORTEX_MODULE_ENABLED
-#define HAL_CRC_MODULE_ENABLED
-#define HAL_DAC_MODULE_ENABLED
-#define HAL_DMA_MODULE_ENABLED
+/* #define HAL_CRC_MODULE_ENABLED */
+/* #define HAL_DAC_MODULE_ENABLED */
+/* #define HAL_DMA_MODULE_ENABLED */
 #define HAL_FLASH_MODULE_ENABLED
 #define HAL_GPIO_MODULE_ENABLED
-#define HAL_I2C_MODULE_ENABLED
-#define HAL_I2S_MODULE_ENABLED
-#define HAL_IRDA_MODULE_ENABLED
-#define HAL_IWDG_MODULE_ENABLED
-#define HAL_PCD_MODULE_ENABLED
-#define HAL_PWR_MODULE_ENABLED
+/* #define HAL_I2C_MODULE_ENABLED */
+/* #define HAL_I2S_MODULE_ENABLED */
+/* #define HAL_IRDA_MODULE_ENABLED */
+/* #define HAL_IWDG_MODULE_ENABLED */
+/* #define HAL_PCD_MODULE_ENABLED */
+/* #define HAL_PWR_MODULE_ENABLED */
 #define HAL_RCC_MODULE_ENABLED
-#define HAL_RTC_MODULE_ENABLED
-#define HAL_SMARTCARD_MODULE_ENABLED
-#define HAL_SMBUS_MODULE_ENABLED
-#define HAL_SPI_MODULE_ENABLED
-#define HAL_TIM_MODULE_ENABLED
-#define HAL_TSC_MODULE_ENABLED
-#define HAL_UART_MODULE_ENABLED
-#define HAL_USART_MODULE_ENABLED
-#define HAL_WWDG_MODULE_ENABLED
+/* #define HAL_RTC_MODULE_ENABLED */
+/* #define HAL_SMARTCARD_MODULE_ENABLED */
+/* #define HAL_SMBUS_MODULE_ENABLED */
+/* #define HAL_SPI_MODULE_ENABLED */
+/* #define HAL_TIM_MODULE_ENABLED */
+/* #define HAL_TSC_MODULE_ENABLED */
+/* #define HAL_UART_MODULE_ENABLED */
+/* #define HAL_USART_MODULE_ENABLED */
+/* #define HAL_WWDG_MODULE_ENABLED */
 
 /* ######################### Oscillator Values adaptation ################### */
 /**
@@ -151,7 +149,7 @@
   */
 #if !defined  (LSE_STARTUP_TIMEOUT)
   #define LSE_STARTUP_TIMEOUT  5000U     /*!< Time out for LSE start up, in ms */
-#endif /* LSE_STARTUP_TIMEOUT */     
+#endif /* LSE_STARTUP_TIMEOUT */
 
 
 /* Tip: To avoid modifying this file each time you need to use different HSE,
@@ -312,3 +310,4 @@
 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
