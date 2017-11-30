@@ -11,5 +11,9 @@
 
 #include <stdint.h>
 
+void jaguar_update_inputs();
+void jaguar_get_pending_transition();
+
+
 #endif /* _JAGUAR_CONTROLLER_H */
 
