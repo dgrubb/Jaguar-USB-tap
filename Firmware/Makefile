@@ -33,7 +33,7 @@ OPENOCD = openocd
 
 OCFLAGS = --strip-unneeded
 CFLAGS = -I./CMSIS/Include/
-CFLAGS += -I./STM32F0xx_HAL_Driver/Inc
+CFLAGS += -I./STM32F0xx_HAL_Driver/Inc/
 CFLAGS += -I./CMSIS/Device/ST/STM32F0xx/Include/
 CFLAGS += -I./ -c -fno-common -Os -g -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -fdata-sections -fno-builtin -Wno-unused-function -ffreestanding
 LFLAGS = -Tstm32f0.ld -nostartfiles -Wl,--gc-sections
