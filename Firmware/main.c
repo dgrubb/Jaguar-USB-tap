@@ -1,6 +1,7 @@
 #include "stm32f0xx_hal.h"
-#include "stm32f0xx_hal_gpio.h"
 #include "stm32f0xx_hal_rcc.h"
+
+#include "gpio/gpio.h"
 
 void SystemClock_Config(void);
 
@@ -14,19 +15,6 @@ int main(void)
 
     while (1) {
     }
-}
-
-void gpio_init()
-{
-     GPIO_InitTypeDef GPIO_InitStructure;
-
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-
-    GPIO_InitStructure.Pin = GPIO_PIN_All;
-    GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING_FALLING;
-    GPIO_InitStructure.Pull = GPIO_PULLUP;
-    GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
 /**

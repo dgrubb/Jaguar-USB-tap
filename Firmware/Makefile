@@ -73,6 +73,7 @@ GDB_CMDS += -ex "c"
 ###############################################################################
 
 OBJS =  main.o
+OBJS += gpio/gpio.o
 # STM32 platform related
 OBJS += handlers.o startup.o
 
