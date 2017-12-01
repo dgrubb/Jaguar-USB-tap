@@ -58,7 +58,6 @@ typedef enum {
 } jaguar_button_t;
 
 typedef struct {
-    uint32_t transition_pending;
     uint16_t address_pin;
     uint16_t row_pin;
     jaguar_button_state_t state;
