@@ -9,8 +9,6 @@
 #include "jaguar-controller.h"
 #include "gpio/gpio.h"
 
-static uint32_t transition_pending = 0;
-
 static jaguar_button_info_t jaguar_button_mapping[] = {
     /* North: */
     { 0, JAGUAR_DB15_PIN4, JAGUAR_DB15_PIN14, JAGUAR_BUTTON_STATE_UP },
@@ -72,8 +70,7 @@ void jaguar_update_inputs()
         }
         if (button_state != jaguar_button_mapping[i].state) {
             jaguar_button_mapping[i].state = button_state;
-            jaguar_button_mapping[i].transition_pending = 1;
-            transition_pending = 1;
+            // TODO: send USB message here
         }
     }
 }
