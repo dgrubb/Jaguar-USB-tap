@@ -12,8 +12,6 @@
 #include <stdint.h>
 #include "stm32f0xx_hal_gpio.h"
 
-uint32_t jaguar_port = GPIOA;
-
 typedef enum {
     JAGUAR_BUTTON_STATE_UP = 0,
     JAGUAR_BUTTON_STATE_DOWN

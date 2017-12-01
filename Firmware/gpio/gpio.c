@@ -20,6 +20,14 @@ void gpio_init()
     GPIO_InitStructure.Pull = GPIO_PULLUP;
     GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+
+    GPIO_InitStructure.Pin = GPIO_PIN_1;
+    GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStructure.Pull = GPIO_PULLUP;
+    GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
 
 void gpio_get_pin(gpio_port_t port, uint16_t pin, GPIO_PinState *value)
