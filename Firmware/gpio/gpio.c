@@ -22,13 +22,13 @@ void gpio_init()
     HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
-void gpio_get_pin(uint16_t pin, GPIO_PinState *value)
+void gpio_get_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState *value)
 {
-    *value = HAL_GPIO_ReadPin(GPIOA, pin);
+    *value = HAL_GPIO_ReadPin(port, pin);
 }
 
-void gpio_set_pin(uint16_t pin, GPIO_PinState value)
+void gpio_set_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState value)
 {
-    HAL_GPIO_WritePin(GPIOB, pin, value);
+    HAL_GPIO_WritePin(port, pin, value);
 }
 

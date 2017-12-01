@@ -13,8 +13,8 @@
 #include "stm32f0xx_hal_gpio.h"
 
 void gpio_init();
-void gpio_get_pin(uint16_t pin, GPIO_PinState *value);
-void gpio_set_pin(uint16_t pin, GPIO_PinState value);
+void gpio_get_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState *value);
+void gpio_set_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState value);
 
 #endif /* _GPIO_H */
 

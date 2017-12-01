@@ -12,7 +12,12 @@
 #include <stdint.h>
 #include "stm32f0xx_hal_gpio.h"
 
+uint32_t jaguar_port = GPIOA;
 
+typedef enum {
+    JAGUAR_BUTTON_STATE_UP = 0,
+    JAGUAR_BUTTON_STATE_DOWN
+} jaguar_button_state_t;
 
 typedef enum {
     JAGUAR_DB15_PIN1  = GPIO_PIN_0,  /* Address 1 */
@@ -36,7 +41,7 @@ typedef enum {
     JAGUAR_BUTTON_B,
     JAGUAR_BUTTON_C,
     JAGUAR_BUTTON_OPTION,
-    JAGUAR_BUTTON_START,
+    JAGUAR_BUTTON_PAUSE,
     JAGUAR_BUTTON_ZERO,
     JAGUAR_BUTTON_ONE,
     JAGUAR_BUTTON_TWO,
@@ -48,14 +53,16 @@ typedef enum {
     JAGUAR_BUTTON_EIGHT,
     JAGUAR_BUTTON_NINE,
     JAGUAR_BUTTON_STAR,
-    JAGUAR_BUTTON_POUND
+    JAGUAR_BUTTON_POUND,
+    JAGUAR_BUTTON_LENGTH
 } jaguar_button_t;
 
 typedef struct {
+    uint32_t transition_pending;
     uint16_t address_pin;
-    uint16_t data_pin;
-    GPIO_PinState state;
-} jaguar_button_state_t;
+    uint16_t row_pin;
+    jaguar_button_state_t state;
+} jaguar_button_info_t;
 
 void jaguar_update_inputs();
 void jaguar_get_pending_transition();
