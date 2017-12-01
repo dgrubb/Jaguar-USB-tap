@@ -1,11 +1,10 @@
 #include "stm32f0xx_hal.h"
 #include "stm32f0xx_hal_rcc.h"
 
+#include "jaguar/jaguar-controller.h"
 #include "gpio/gpio.h"
 
 void SystemClock_Config(void);
-
-
 
 int main(void)
 {
@@ -22,6 +21,7 @@ int main(void)
 void SysTick_Handler(void)
 {
     HAL_IncTick();
+    jaguar_update_inputs();
 }
 
 /**
