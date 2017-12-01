@@ -12,6 +12,21 @@
 #include <stdint.h>
 #include "stm32f0xx_hal_gpio.h"
 
+
+
+typedef enum {
+    JAGUAR_DB15_PIN1  = GPIO_PIN_0,  /* Address 1 */
+    JAGUAR_DB15_PIN2  = GPIO_PIN_1,  /* Address 2 */
+    JAGUAR_DB15_PIN3  = GPIO_PIN_2,  /* Address 3 */
+    JAGUAR_DB15_PIN4  = GPIO_PIN_3,  /* Address 4 */
+    JAGUAR_DB15_PIN6  = GPIO_PIN_4,  /* Row 1 */
+    JAGUAR_DB15_PIN10 = GPIO_PIN_5,  /* Row 2 */
+    JAGUAR_DB15_PIN11 = GPIO_PIN_6,  /* Row 3 */
+    JAGUAR_DB15_PIN12 = GPIO_PIN_7,  /* Row 4 */
+    JAGUAR_DB15_PIN13 = GPIO_PIN_13, /* Row 5 */
+    JAGUAR_DB15_PIN14 = GPIO_PIN_14  /* Row 6 */
+} jaguar_db15_pin_t;
+
 typedef enum {
     JAGUAR_BUTTON_NORTH = 0,
     JAGUAR_BUTTON_SOUTH,
