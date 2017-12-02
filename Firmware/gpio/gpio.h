@@ -18,8 +18,8 @@ typedef enum {
 } gpio_port_t;
 
 void gpio_init();
-void gpio_get_pin(gpio_port_t port, uint16_t pin, GPIO_PinState *value);
-void gpio_set_pin(gpio_port_t port, uint16_t pin, GPIO_PinState value);
+void gpio_get_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState *value);
+void gpio_set_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState value);
 GPIO_TypeDef* gpio_get_periph_address(gpio_port_t port);
 
 #endif /* _GPIO_H */

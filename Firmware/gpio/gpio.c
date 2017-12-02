@@ -30,24 +30,13 @@ void gpio_init()
     HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
 
-void gpio_get_pin(gpio_port_t port, uint16_t pin, GPIO_PinState *value)
+void gpio_get_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState *value)
 {
-    GPIO_TypeDef *periph_port = gpio_get_periph_address(port);
-    *value = HAL_GPIO_ReadPin(periph_port, pin);
+    *value = HAL_GPIO_ReadPin(port, pin);
 }
 
-void gpio_set_pin(gpio_port_t port, uint16_t pin, GPIO_PinState value)
+void gpio_set_pin(GPIO_TypeDef *port, uint16_t pin, GPIO_PinState value)
 {
-    GPIO_TypeDef *periph_port = gpio_get_periph_address(port);
-    HAL_GPIO_WritePin(periph_port, pin, value);
-}
-
-GPIO_TypeDef* gpio_get_periph_address(gpio_port_t port)
-{
-    switch (port) {
-        case GPIO_PORT_A: return GPIOA;
-        case GPIO_PORT_B: return GPIOB;
-        default:          return GPIOA;
-    }
+    HAL_GPIO_WritePin(port, pin, value);
 }
 
