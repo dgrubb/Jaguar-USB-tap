@@ -10,9 +10,12 @@ int main(void)
 {
     HAL_Init();
 
-    /* Configure the system clock to 48 MHz */
+    /* Configure the system clock to 48 MHz and configure I/O */
     SystemClock_Config();
     gpio_init();
+
+    /* Turn on the Output Enable pin of the board's voltage translation ICs */
+    gpio_set_pin(GPIOB, 1, GPIO_PIN_SET);
 
     while (1) {
     }
