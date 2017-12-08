@@ -47,9 +47,8 @@ CFLAGS += -DSTM32F070x6
 
 # This is somewhat particular to STM32F0 chips on the Nucleo board with
 # integrated STLink. Edit as appropriate.
-#OPENOCD_CFG = /usr/share/openocd/scripts/board/st_nucleo_f0.cfg
-OPENOCD_CFG = /usr/share/openocd/scripts/interface/stlink-v2-1.cfg
-OPENOCD_TARGET_CFG = /usr/share/openocd/scripts/target/stm32f0x.cfg
+OPENOCD_CFG = /usr/local/share/openocd/scripts/interface/stlink-v2-1.cfg
+OPENOCD_TARGET_CFG = /usr/local/share/openocd/scripts/target/stm32f0x.cfg
 OPENOCD_ARGS = -f $(OPENOCD_CFG)
 OPENOCD_ARGS += -f $(OPENOCD_TARGET_CFG)
 OBJCOPY_ARGS = -Oihex
@@ -69,7 +68,8 @@ GDB_CMDS = -ex "target remote localhost:3333"
 GDB_CMDS += -ex "file main.elf"
 GDB_CMDS += -ex "mon reset halt"
 GDB_CMDS += -ex "tbreak main"
-GDB_CMDS += -ex "c"
+# Uncomment to allow application to run before user can attach to a GDB session
+#GDB_CMDS += -ex "c"
 
 ###############################################################################
 # Project code
