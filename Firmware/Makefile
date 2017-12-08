@@ -47,8 +47,11 @@ CFLAGS += -DSTM32F070x6
 
 # This is somewhat particular to STM32F0 chips on the Nucleo board with
 # integrated STLink. Edit as appropriate.
-OPENOCD_CFG = /usr/share/openocd/scripts/board/st_nucleo_f0.cfg
+#OPENOCD_CFG = /usr/share/openocd/scripts/board/st_nucleo_f0.cfg
+OPENOCD_CFG = /usr/share/openocd/scripts/interface/stlink-v2-1.cfg
+OPENOCD_TARGET_CFG = /usr/share/openocd/scripts/target/stm32f0x.cfg
 OPENOCD_ARGS = -f $(OPENOCD_CFG)
+OPENOCD_ARGS += -f $(OPENOCD_TARGET_CFG)
 OBJCOPY_ARGS = -Oihex
 # Upload
 OPENOCD_UPLOAD_CMDS = -c init
