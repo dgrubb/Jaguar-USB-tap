@@ -1,4 +1,4 @@
-update=Thu 21 Dec 2017 10:37:42 AM CST
+update=Thu 21 Dec 2017 12:16:48 PM CST
 version=1
 last_client=kicad
 [cvpcb]
@@ -62,3 +62,13 @@ LibName30=STM32F070F6/stm32f070f6
 LibName31=TXB0106/txb0106
 LibName32=STM32F070CB/stm32f070cbt6
 LibName33=Switches/Switch
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../preview/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
