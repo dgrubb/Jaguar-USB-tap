@@ -4,7 +4,7 @@
   * @brief   Interrupt Service Routines.
   ******************************************************************************
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -124,7 +124,7 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-* @brief This function handles USB global Interrupt / USB wake-up interrupt through EXTI line 18.
+* @brief This function handles USB global interrupt / USB wake-up interrupt through EXTI line 18.
 */
 void USB_IRQHandler(void)
 {

@@ -67,6 +67,7 @@ C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c
 C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c
 C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c
 C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c
+C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c
 C_SOURCES += Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c
 # STM Middleware
 C_SOURCES += Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c
@@ -88,10 +89,10 @@ C_SOURCES += Src/usbd_conf.c
 C_SOURCES += Src/main.c
 
 # ASM sources
-ASM_SOURCES = startup_stm32f070x6.s
+ASM_SOURCES = startup_stm32f070xb.s
 
 # Linker script
-LDSCRIPT = STM32F070F6Px_FLASH.ld
+LDSCRIPT = STM32F070CBTx_FLASH.ld
 
 ################################################################################
 # Include directories
@@ -111,7 +112,7 @@ C_INCLUDES += -I./Drivers/CMSIS/Include
 
 CPU = -mcpu=cortex-m0
 MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
-C_DEFS = -DUSE_HAL_DRIVER -DSTM32F070x6
+C_DEFS = -DUSE_HAL_DRIVER -DSTM32F070xB
 
 ASFLAGS = $(MCU) $(OPT) -Wall -fdata-sections -ffunction-sections
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
@@ -127,8 +128,8 @@ LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$
 # Upload commands
 ###############################################################################
 
-OPENOCD_CFG = /usr/local/share/openocd/scripts/interface/stlink-v2-1.cfg
-OPENOCD_TARGET_CFG = /usr/local/share/openocd/scripts/target/stm32f0x.cfg
+OPENOCD_CFG = /usr/share/openocd/scripts/interface/stlink-v2-1.cfg
+OPENOCD_TARGET_CFG = /usr/share/openocd/scripts/target/stm32f0x.cfg
 OPENOCD_ARGS  = -f $(OPENOCD_CFG)
 OPENOCD_ARGS += -f $(OPENOCD_TARGET_CFG)
 # Upload
