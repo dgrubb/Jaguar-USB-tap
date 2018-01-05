@@ -26,8 +26,8 @@ typedef enum {
     JAGUAR_DB15_PIN10 = GPIO_PIN_5,  /* Row 2 */
     JAGUAR_DB15_PIN11 = GPIO_PIN_6,  /* Row 3 */
     JAGUAR_DB15_PIN12 = GPIO_PIN_7,  /* Row 4 */
-    JAGUAR_DB15_PIN13 = GPIO_PIN_13, /* Row 5 */
-    JAGUAR_DB15_PIN14 = GPIO_PIN_14  /* Row 6 */
+    JAGUAR_DB15_PIN13 = GPIO_PIN_8, /* Row 5 */
+    JAGUAR_DB15_PIN14 = GPIO_PIN_9  /* Row 6 */
 } jaguar_db15_pin_t;
 
 typedef enum {

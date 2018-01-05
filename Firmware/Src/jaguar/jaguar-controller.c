@@ -9,7 +9,7 @@
 #include "jaguar-controller.h"
 #include "gpio/gpio.h"
 
-static GPIO_TypeDef *jaguar_port = GPIOA;
+static GPIO_TypeDef *jaguar_port = GPIOB;
 
 static jaguar_button_info_t jaguar_button_mapping[] = {
     /* North: */
