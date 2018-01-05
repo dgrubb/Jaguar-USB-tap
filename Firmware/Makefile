@@ -13,7 +13,7 @@
 # Session options
 TARGET = Jaguar-USB-tap
 DEBUG = 1
-OPT = -Og
+OPT = -O0
 BUILD_DIR = build
 
 ################################################################################
@@ -75,18 +75,15 @@ C_SOURCES += Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
 C_SOURCES += Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
 C_SOURCES += Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
 # Project source
-C_SOURCES += Src/usb_device.c
 C_SOURCES += Src/stm32f0xx_it.c
+C_SOURCES += Src/usb_device.c
 C_SOURCES += Src/stm32f0xx_hal_msp.c
-C_SOURCES += Src/usb_device.c
-C_SOURCES += Src/stm32f0xx_it.c
 C_SOURCES += Src/usbd_desc.c
 C_SOURCES += Src/usbd_conf.c
-C_SOURCES += Src/usbd_desc.c
-C_SOURCES += Src/stm32f0xx_hal_msp.c
 C_SOURCES += Src/system_stm32f0xx.c
 C_SOURCES += Src/usbd_conf.c
 C_SOURCES += Src/main.c
+C_SOURCES += Src/jaguar/jaguar-controller.c
 
 # ASM sources
 ASM_SOURCES = startup_stm32f070xb.s
@@ -98,13 +95,13 @@ LDSCRIPT = STM32F070CBTx_FLASH.ld
 # Include directories
 ################################################################################
 
-C_INCLUDES  = -I./Inc
-C_INCLUDES += -I./Drivers/STM32F0xx_HAL_Driver/Inc
-C_INCLUDES += -I./Drivers/STM32F0xx_HAL_Driver/Inc/Legacy
-C_INCLUDES += -I./Middlewares/ST/STM32_USB_Device_Library/Core/Inc
-C_INCLUDES += -I./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc
-C_INCLUDES += -I./Drivers/CMSIS/Device/ST/STM32F0xx/Include
-C_INCLUDES += -I./Drivers/CMSIS/Include
+C_INCLUDES  = -IInc
+C_INCLUDES += -IDrivers/STM32F0xx_HAL_Driver/Inc
+C_INCLUDES += -IDrivers/STM32F0xx_HAL_Driver/Inc/Legacy
+C_INCLUDES += -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc
+C_INCLUDES += -IMiddlewares/ST/STM32_USB_Device_Library/Class/HID/Inc
+C_INCLUDES += -IDrivers/CMSIS/Device/ST/STM32F0xx/Include
+C_INCLUDES += -IDrivers/CMSIS/Include
 
 ################################################################################
 # Compilation flags

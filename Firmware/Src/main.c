@@ -1,6 +1,8 @@
+#include <string.h>
 #include "main.h"
 #include "stm32f0xx_hal.h"
 #include "usb_device.h"
+#include "jaguar/jaguar-controller.h"
 
 UART_HandleTypeDef huart2;
 
@@ -22,7 +24,14 @@ int main(void)
 
     /* Infinite loop */
     while (1) {
+        HAL_Delay(100);
+      jaguar_update_inputs(&huart2);
     }
+}
+
+void systick_init()
+{
+    (void) SysTick_Config (HAL_RCC_GetSysClockFreq()/1000);
 }
 
 /** System Clock Configuration
@@ -85,8 +94,8 @@ static void MX_USART2_UART_Init(void)
 {
 
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 38400;
-  huart2.Init.WordLength = UART_WORDLENGTH_7B;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
   huart2.Init.Mode = UART_MODE_TX_RX;
@@ -99,6 +108,11 @@ static void MX_USART2_UART_Init(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
+  char msg[50];
+  memset(msg, 0, 50);
+  sprintf(msg, "Jaguar USB Tap - ONLINE\n\r");
+
+  HAL_UART_Transmit(&huart2, msg, 50, HAL_MAX_DELAY);
 }
 
 /** Configure pins as 
@@ -124,8 +138,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : PB0 PB1 PB2 PB3 
                            PB4 PB5 PB6 PB7 
                            PB8 PB9 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3 
-                          |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7 
+  GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7 
                           |GPIO_PIN_8|GPIO_PIN_9;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -137,6 +150,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ // GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
 
 }
 
