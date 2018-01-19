@@ -4,6 +4,35 @@
 #include "usb_device.h"
 #include "jaguar/jaguar-controller.h"
 
+static const char atari_logo[] = "\n\r"
+"\n\r"
+"            Jaguar-USB-tap\n\r"
+"            --------------\n\r"
+"\n\r"
+"         by David Grubb, 2018\n\r"
+"  https://github.com/dgrubb/Jaguar-USB-tap\n\r"
+"\n\r"
+"A USB adapter for the Atari Jaguar controller.\n\r"
+"\n\r"
+
+"              $$ $$$$$ $$\n\r"
+"              $$ $$$$$ $$\n\r"
+"             .$$ $$$$$ $$.\n\r"
+"             :$$ $$$$$ $$:\n\r"
+"             $$$ $$$$$ $$$\n\r"
+"             $$$ $$$$$ $$$\n\r"
+"            ,$$$ $$$$$ $$$.\n\r"
+"           ,$$$$ $$$$$ $$$$.\n\r"
+"          ,$$$$; $$$$$ :$$$$.\n\r"
+"         ,$$$$$  $$$$$  $$$$$.\n\r"
+"       ,$$$$$$'  $$$$$  `$$$$$$.\n\r"
+"     ,$$$$$$$'   $$$$$   `$$$$$$$.\n\r"
+"  ,s$$$$$$$'     $$$$$     `$$$$$$$s.\n\r"
+"$$$$$$$$$'       $$$$$       `$$$$$$$$$\n\r"
+"$$$$$Y'          $$$$$          `Y$$$$$\n\r"
+"\n\r"
+"            Welcome to 1993!\n\r";
+
 UART_HandleTypeDef huart2;
 
 void SystemClock_Config(void);
@@ -25,6 +54,9 @@ int main(void)
 
     /* Turn on the DEBUG LED for visual indication that we're up and running */
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
+
+    /* I'm a sucker for a bit of ASCII art*/
+    HAL_UART_Transmit(&huart2, atari_logo, strlen(atari_logo), HAL_MAX_DELAY);
 
     /* Infinite loop */
     while (1) {
@@ -89,8 +121,6 @@ void SystemClock_Config(void)
 
 static void MX_USART2_UART_Init(void)
 {
-    const *char welcome_msg= "Jaguar USB Tap - ONLINE\n\r dgrubb, 2018";
-
     /*
      * TX: Pin PA2
      * RX: Pin PA3
@@ -115,8 +145,6 @@ static void MX_USART2_UART_Init(void)
     if (HAL_UART_Init(&huart2) != HAL_OK) {
         _Error_Handler(__FILE__, __LINE__);
     }
-
-    HAL_UART_Transmit(&huart2, welcome_msg, strlen(welcome_msg), HAL_MAX_DELAY);
 }
 
 static void MX_GPIO_Init(void)
