@@ -48,14 +48,24 @@ void jaguar_update_inputs(UART_HandleTypeDef *uart)
 
     for (i=0; i<JAGUAR_BUTTON_LENGTH; i++) {
         if (address_pin != jaguar_button_mapping[i].address_pin) {
+            /* Only switch the address pins if a new address is required. Buttons
+             * are ordered in the button mapping table so that addresses are
+             * grouped together and should only need switching four times for a 
+             * complete sweep of all the buttons.
+             * */
             jaguar_select_address(jaguar_button_mapping[i].address_pin);
             HAL_Delay(10);
         }
+        /* N.B: data pins are active low (RESET) when pressed.
+         */
         if (GPIO_PIN_RESET == HAL_GPIO_ReadPin(jaguar_port, jaguar_button_mapping[i].row_pin)) {
             button_state = JAGUAR_BUTTON_STATE_DOWN;
         } else {
             button_state = JAGUAR_BUTTON_STATE_UP;
         }
+        /* Update the new button state and send messages on UART (for debug)
+         * and USB (for fun).
+         */
         if (button_state != jaguar_button_mapping[i].state) {
             jaguar_button_mapping[i].state = button_state;
             memset(debug_msg, 0, JAGUAR_DEBUG_MSG_LENGTH);
