@@ -73,7 +73,7 @@
   */ 
 #define USBD_VID     1155
 #define USBD_LANGID_STRING     1033
-#define USBD_MANUFACTURER_STRING     "Hackers of the world"
+#define USBD_MANUFACTURER_STRING     "dgrubb"
 #define USBD_PID_FS     22315
 #define USBD_PRODUCT_STRING_FS     "Jaguar USB Tap"
 #define USBD_SERIALNUMBER_STRING_FS     "00000000001A"
