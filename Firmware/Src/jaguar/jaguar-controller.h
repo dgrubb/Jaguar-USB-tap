@@ -36,27 +36,27 @@ typedef enum {
 } jaguar_db15_pin_t;
 
 typedef enum {
-    JAGUAR_BUTTON_NORTH = 0,
-    JAGUAR_BUTTON_SOUTH,
+    JAGUAR_BUTTON_OPTION = 0,
+    JAGUAR_BUTTON_THREE,
+    JAGUAR_BUTTON_SIX,
+    JAGUAR_BUTTON_NINE,
+    JAGUAR_BUTTON_POUND,
+    JAGUAR_BUTTON_C,
+    JAGUAR_BUTTON_TWO,
+    JAGUAR_BUTTON_FIVE,
+    JAGUAR_BUTTON_EIGHT,
+    JAGUAR_BUTTON_ZERO,
+    JAGUAR_BUTTON_B,
+    JAGUAR_BUTTON_ONE,
+    JAGUAR_BUTTON_FOUR,
+    JAGUAR_BUTTON_SEVEN,
+    JAGUAR_BUTTON_STAR,
+    JAGUAR_BUTTON_PAUSE,
+    JAGUAR_BUTTON_A,
     JAGUAR_BUTTON_EAST,
     JAGUAR_BUTTON_WEST,
-    JAGUAR_BUTTON_A,
-    JAGUAR_BUTTON_B,
-    JAGUAR_BUTTON_C,
-    JAGUAR_BUTTON_OPTION,
-    JAGUAR_BUTTON_PAUSE,
-    JAGUAR_BUTTON_ZERO,
-    JAGUAR_BUTTON_ONE,
-    JAGUAR_BUTTON_TWO,
-    JAGUAR_BUTTON_THREE,
-    JAGUAR_BUTTON_FOUR,
-    JAGUAR_BUTTON_FIVE,
-    JAGUAR_BUTTON_SIX,
-    JAGUAR_BUTTON_SEVEN,
-    JAGUAR_BUTTON_EIGHT,
-    JAGUAR_BUTTON_NINE,
-    JAGUAR_BUTTON_STAR,
-    JAGUAR_BUTTON_POUND,
+    JAGUAR_BUTTON_SOUTH,
+    JAGUAR_BUTTON_NORTH,
     JAGUAR_BUTTON_LENGTH
 } jaguar_button_t;
 
@@ -67,9 +67,16 @@ typedef struct {
     jaguar_button_state_t state;
 } jaguar_button_info_t;
 
+typedef struct {
+    uint32_t buttons;
+    int8_t x;
+    int8_t y;
+} jaguar_usb_report_t;
+
 void jaguar_update_inputs(UART_HandleTypeDef *uart);
 void jaguar_get_pending_transition();
 void jaguar_select_address(jaguar_db15_pin_t address_pin);
+void jaguar_send_USB_report();
 const char* jaguar_get_button_str(jaguar_button_t button);
 const char* jaguar_get_button_state_str(jaguar_button_state_t state);
 
