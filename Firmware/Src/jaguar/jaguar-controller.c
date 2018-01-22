@@ -9,7 +9,7 @@
 #include <string.h>
 #include "jaguar-controller.h"
 
-#define IS_SET(x) (x != 0)
+#define IS_SET(x) ((JAGUAR_BUTTON_STATE_DOWN == x) ? 1: 0 )
 
 static GPIO_TypeDef *jaguar_port = GPIOB;
 
@@ -96,13 +96,20 @@ void jaguar_select_address(jaguar_db15_pin_t address_pin)
 void jaguar_send_USB_report()
 {
     jaguar_usb_report_t report;
-    memset(report, 0, sizeof(jaguar_usb_report_t));
+    memset(&report, 0, sizeof(jaguar_usb_report_t));
 
+    /* Set directional axis bytes */
     if (IS_SET(jaguar_button_mapping[JAGUAR_BUTTON_NORTH]) report.y = 127;
     if (IS_SET(jaguar_button_mapping[JAGUAR_BUTTON_SOUTH]) report.y = -127;
     if (IS_SET(jaguar_button_mapping[JAGUAR_BUTTON_EAST])) report.x = 127;
     if (IS_SET(jaguar_button_mapping[JAGUAR_BUTTON_WEST])) report.x = -127;
 
+    /* Apply button states */
+    if (IS_SET(jaguar_button_mapping[JAGUAR_BUTTON_OPTION].state)) {
+        report.buttons |= JAGUAR_USB_MAPPING_OPTION;
+    } else {
+        report.buttons &= ~JAGUAR_USB_MAPPING_OPTION;
+    }
 }
 
 const char* jaguar_get_button_state_str(jaguar_button_state_t state)
