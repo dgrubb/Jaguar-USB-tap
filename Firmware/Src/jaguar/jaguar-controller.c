@@ -12,6 +12,9 @@
 
 static GPIO_TypeDef *jaguar_port = GPIOB;
 
+uint8_t data[5];
+jaguar_usb_report_t report;
+
 static jaguar_button_info_t jaguar_button_mapping[] = {
     /* Column 1 */
     { JAGUAR_BUTTON_OPTION, JAGUAR_DB15_PIN1, JAGUAR_DB15_PIN10, JAGUAR_BUTTON_STATE_UP },
@@ -95,10 +98,7 @@ void jaguar_select_address(jaguar_db15_pin_t address_pin)
 
 void jaguar_send_USB_report()
 {
-    jaguar_usb_report_t report;
     memset(&report, 0, sizeof(jaguar_usb_report_t));
-
-    uint8_t data[5];
     memset(&data, 0, 5);
 
     if (jaguar_button_mapping[JAGUAR_BUTTON_NORTH].state == JAGUAR_BUTTON_STATE_DOWN) report.y = 127;
@@ -208,18 +208,12 @@ void jaguar_send_USB_report()
         report.buttons &= ~JAGUAR_USB_BUTTON_A;
     }
 
-    data[0] = report.x;
-    data[1] = report.y;
-    data[2] = (uint8_t)report.buttons;
-    data[3] = (uint8_t)(report.buttons >> 8);
-//    data[4] = (uint8_t)(report.buttons >> 16);
-    if (jaguar_button_mapping[JAGUAR_BUTTON_A].state == JAGUAR_BUTTON_STATE_DOWN) {
-        data[4] = 1;
-    } else {
-        data[4] = 0;
-    }
+    data[0] = (uint8_t)report.buttons;
+    data[1] = (uint8_t)(report.buttons >> 8);
+    data[2] = (uint8_t)(report.buttons >> 16);
+    data[3] = report.x;
+    data[4] = report.y;
 
-    data[4] = 0;
     MX_USB_DEVICE_Send(&data, 5);
 }
 

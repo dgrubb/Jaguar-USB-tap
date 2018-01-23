@@ -86,9 +86,9 @@ typedef struct {
 } jaguar_button_info_t;
 
 typedef struct {
-    uint32_t buttons;
     int8_t x;
     int8_t y;
+    uint32_t buttons;
 } jaguar_usb_report_t;
 
 void jaguar_update_inputs(UART_HandleTypeDef *uart);

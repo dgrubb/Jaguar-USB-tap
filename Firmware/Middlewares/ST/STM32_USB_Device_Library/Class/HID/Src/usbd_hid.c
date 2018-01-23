@@ -220,6 +220,20 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  _
     0x09,   0x05,   /* USAGE (Game Pad) */
     0xA1,   0x01,   /* COLLECTION (Application) */
     0xA1,   0x00,   /* COLLECTION (Physical) */
+    /* 17 action buttons: */
+    0x05,   0x09,   /* USAGE_PAGE (Button) */
+    0x19,   0x01,   /* USAGE_MINIMUM (Button 1) */
+    0x29,   0x11,   /* USAGE_MAXIMUM (Button 17) */
+    0x15,   0x00,   /* LOGICAL_MINIMUM (0) */
+    0x25,   0x01,   /* LOGICAL_MAXIMUM (1) */
+    0x75,   0x01,   /* REPORT_SIZE(1) */
+    0x95,   0x11,   /* REPORT_COUNT(17) */
+    0x81,   0x02,   /* INPUT(Data,Var,Abs) */
+    /* Padding */
+    0x95,   0x01,   /* REPORT_COUNT(1) */
+    0x75,   0x07,   /* REPORT_SIZE(15) */
+    0x81,   0x03,   /* INPUT(CONSTANT) */
+    /* D-Pad: */
     0x05,   0x01,   /* USAGE_PAGE (Generic Desktop) */
     0x09,   0x30,   /* USAGE (X) */
     0x09,   0x31,   /* USAGE (Y) */
@@ -228,17 +242,9 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  _
     0x75,   0x08,   /* REPORT_SIZE (8) */
     0x95,   0x02,   /* REPORT_COUNT (2) */
     0x81,   0x02,   /* INPUT(Data,Var, Abs) */
-    0x05,   0x09,   /* USAGE_PAGE (Button) */
-    0x19,   0x01,   /* USAGE_MINIMUM (Button 1) */
-    0x29,   0x18,   /* USAGE_MAXIMUM (Button 17) */
-    0x15,   0x00,   /* LOGICAL_MINIMUM (0) */
-    0x25,   0x01,   /* LOGICAL_MAXIMUM (1) */
-    0x75,   0x01,   /* REPORT_SIZE(1) */
-    0x95,   0x18,   /* REPORT_COUNT(17) */
-    0x81,   0x02,   /* INPUT(Data,Var,Abs) */
     /* Test padding: */
-//    0x95,   0x07,   /* REPORT_COUNT(7) */
-//    0x75,   0x01,   /* REPORT_SIZE(1) */
+//    0x95,   0x01,   /* REPORT_COUNT(1) */
+//    0x75,   0x0F,   /* REPORT_SIZE(15) */
 //    0x81,   0x03,   /* INPUT(CONSTANT) */
     /* end test */
     0xC0,   0xC0    /* END_COLLECTION, END_COLLECTION */
