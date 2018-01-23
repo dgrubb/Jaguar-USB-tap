@@ -79,6 +79,13 @@ void MX_USB_DEVICE_Init(void)
   * @}
   */
 
+
+
+void MX_USB_DEVICE_Send(uint8_t *report, uint16_t len)
+{
+    USBD_HID_SendReport (&hUsbDeviceFS, report, len);
+}
+
 /**
   * @}
   */

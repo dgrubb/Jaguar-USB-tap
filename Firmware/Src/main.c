@@ -63,7 +63,6 @@ int main(void)
         /* 100ms delay, probably unnecessary and may be removed after
          * more practical tests
          */
-        HAL_Delay(100);
         jaguar_update_inputs(&huart2);
     }
 }
