@@ -229,9 +229,9 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  _
     0x75,   0x01,   /* REPORT_SIZE(1) */
     0x95,   0x11,   /* REPORT_COUNT(17) */
     0x81,   0x02,   /* INPUT(Data,Var,Abs) */
-    /* Padding */
+    /* Byte alignment padding: */
     0x95,   0x01,   /* REPORT_COUNT(1) */
-    0x75,   0x07,   /* REPORT_SIZE(15) */
+    0x75,   0x07,   /* REPORT_SIZE(7) */
     0x81,   0x03,   /* INPUT(CONSTANT) */
     /* D-Pad: */
     0x05,   0x01,   /* USAGE_PAGE (Generic Desktop) */
@@ -242,11 +242,6 @@ __ALIGN_BEGIN static uint8_t HID_MOUSE_ReportDesc[HID_MOUSE_REPORT_DESC_SIZE]  _
     0x75,   0x08,   /* REPORT_SIZE (8) */
     0x95,   0x02,   /* REPORT_COUNT (2) */
     0x81,   0x02,   /* INPUT(Data,Var, Abs) */
-    /* Test padding: */
-//    0x95,   0x01,   /* REPORT_COUNT(1) */
-//    0x75,   0x0F,   /* REPORT_SIZE(15) */
-//    0x81,   0x03,   /* INPUT(CONSTANT) */
-    /* end test */
     0xC0,   0xC0    /* END_COLLECTION, END_COLLECTION */
 }; 
 

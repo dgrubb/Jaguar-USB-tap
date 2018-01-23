@@ -15,6 +15,7 @@
 #include "stm32f0xx_hal_uart.h"
 
 #define JAGUAR_DEBUG_MSG_LENGTH 100
+#define JAGUAR_USB_REPORT_LENGTH    5
 
 #define JAGUAR_USB_BUTTON_OPTION 0x00000001
 #define JAGUAR_USB_BUTTON_THREE  0x00000002
@@ -33,6 +34,7 @@
 #define JAGUAR_USB_BUTTON_STAR   0x00004000
 #define JAGUAR_USB_BUTTON_PAUSE  0x00008000
 #define JAGUAR_USB_BUTTON_A      0x00010000
+#define JAGUAR_USB_BUTTON_NONE   0x00000000
 
 typedef enum {
     JAGUAR_BUTTON_STATE_UP = 0,
@@ -83,6 +85,7 @@ typedef struct {
     jaguar_db15_pin_t address_pin;
     jaguar_db15_pin_t row_pin;
     jaguar_button_state_t state;
+    uint32_t usb_mask;
 } jaguar_button_info_t;
 
 typedef struct {

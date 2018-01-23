@@ -4,7 +4,7 @@
 #include "usb_device.h"
 #include "jaguar/jaguar-controller.h"
 
-static const char atari_logo[] = "\n\r"
+static char atari_logo[] = "\n\r"
 "\n\r"
 "            Jaguar-USB-tap\n\r"
 "            --------------\n\r"
@@ -60,9 +60,6 @@ int main(void)
 
     /* Infinite loop */
     while (1) {
-        /* 100ms delay, probably unnecessary and may be removed after
-         * more practical tests
-         */
         jaguar_update_inputs(&huart2);
     }
 }
