@@ -126,7 +126,7 @@ void jaguar_send_USB_report()
     jaguar_usb_data[3] = report.x;
     jaguar_usb_data[4] = report.y;
 
-    MX_USB_DEVICE_Send(&jaguar_usb_data, JAGUAR_USB_REPORT_LENGTH);
+    MX_USB_DEVICE_Send(jaguar_usb_data, JAGUAR_USB_REPORT_LENGTH);
 }
 
 const char* jaguar_get_button_state_str(jaguar_button_state_t state)
