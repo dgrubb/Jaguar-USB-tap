@@ -1,5 +1,4 @@
 (fp_lib_table
   (lib (name TXB0106)(type KiCad)(uri /home/dave/Jaguar-USB-tap/Hardware/TXB0106)(options "")(descr ""))
   (lib (name DB15-SPC15430)(type KiCad)(uri /home/dave/Jaguar-USB-tap/Hardware/DB15-SPC15430)(options "")(descr ""))
-  (lib (name SilkArt)(type KiCad)(uri /home/dave/Jaguar-USB-tap/Hardware/SilkArt)(options "")(descr ""))
 )
