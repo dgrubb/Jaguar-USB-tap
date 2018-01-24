@@ -39,7 +39,7 @@ int main(void)
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
 
     /* I'm a sucker for a bit of ASCII art*/
-    HAL_UART_Transmit(&huart2, welcome_message, strlen(welcome_message), HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart2, (uint8_t *)welcome_message, strlen(welcome_message), HAL_MAX_DELAY);
 
     /* Infinite loop */
     while (1) {
