@@ -12,6 +12,8 @@ The hardware is developed using the open-source schematic and PCB design tool [K
 
 ![Jaguar USB Tap](./preview/Jaguar-USB-tap_render.png)
 
+![Jaguar USB Tap in use](./preview/Jaguar-USB-Tap-in-use.jpg)
+
 ## Firmware
 
 ### Prerequisites
