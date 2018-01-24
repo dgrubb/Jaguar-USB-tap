@@ -4,7 +4,7 @@
 #include "usb_device.h"
 #include "jaguar/jaguar-controller.h"
 
-static char atari_logo[] = "\n\r"
+static char welcome_message[] = "\n\r"
 "\n\r"
 "            Jaguar-USB-tap\n\r"
 "            --------------\n\r"
@@ -13,23 +13,6 @@ static char atari_logo[] = "\n\r"
 "  https://github.com/dgrubb/Jaguar-USB-tap\n\r"
 "\n\r"
 "A USB adapter for the Atari Jaguar controller.\n\r"
-"\n\r"
-
-"              $$ $$$$$ $$\n\r"
-"              $$ $$$$$ $$\n\r"
-"             .$$ $$$$$ $$.\n\r"
-"             :$$ $$$$$ $$:\n\r"
-"             $$$ $$$$$ $$$\n\r"
-"             $$$ $$$$$ $$$\n\r"
-"            ,$$$ $$$$$ $$$.\n\r"
-"           ,$$$$ $$$$$ $$$$.\n\r"
-"          ,$$$$; $$$$$ :$$$$.\n\r"
-"         ,$$$$$  $$$$$  $$$$$.\n\r"
-"       ,$$$$$$'  $$$$$  `$$$$$$.\n\r"
-"     ,$$$$$$$'   $$$$$   `$$$$$$$.\n\r"
-"  ,s$$$$$$$'     $$$$$     `$$$$$$$s.\n\r"
-"$$$$$$$$$'       $$$$$       `$$$$$$$$$\n\r"
-"$$$$$Y'          $$$$$          `Y$$$$$\n\r"
 "\n\r"
 "            Welcome to 1993!\n\r";
 
@@ -56,7 +39,7 @@ int main(void)
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
 
     /* I'm a sucker for a bit of ASCII art*/
-    HAL_UART_Transmit(&huart2, atari_logo, strlen(atari_logo), HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart2, welcome_message, strlen(welcome_message), HAL_MAX_DELAY);
 
     /* Infinite loop */
     while (1) {
