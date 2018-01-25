@@ -10,7 +10,7 @@ The hardware is developed using the open-source schematic and PCB design tool [K
 
 ![Assembled Jaguar USB Tap](./preview/close-up.jpg)
 
-![Jaguar USB Tap](./preview/game-in-progress.png)
+![Jaguar USB Tap](./preview/game-in-progress.jpg)
 
 ![Typical use case](./preview/windows-button-assignment.jpg)
 
