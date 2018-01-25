@@ -57,7 +57,6 @@ void jaguar_update_inputs(UART_HandleTypeDef *uart)
              * complete sweep of all the buttons.
              * */
             jaguar_select_address(jaguar_button_mapping[i].address_pin);
-           // HAL_Delay(10);
         }
         /* N.B: data pins are active low (RESET) when pressed.
          */
