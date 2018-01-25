@@ -35,10 +35,10 @@ int main(void)
     MX_USART2_UART_Init();
     MX_USB_DEVICE_Init();
 
-    /* Turn on the DEBUG LED for visual indication that we're up and running */
+    /* Turn on the DEBUG LED for visual indication that we're up and running and
+     * display a welcome message on the UART 
+     * */
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
-
-    /* I'm a sucker for a bit of ASCII art*/
     HAL_UART_Transmit(&huart2, (uint8_t *)welcome_message, strlen(welcome_message), HAL_MAX_DELAY);
 
     /* Infinite loop */

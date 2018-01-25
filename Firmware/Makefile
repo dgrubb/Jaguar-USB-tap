@@ -12,7 +12,7 @@
 
 # Session options
 TARGET = Jaguar-USB-tap
-DEBUG = 1
+DEBUG = 0
 OPT = -O0
 BUILD_DIR = build
 
