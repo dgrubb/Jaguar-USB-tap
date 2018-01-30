@@ -16,6 +16,16 @@ The hardware is developed using the open-source schematic and PCB design tool [K
 
 ## Firmware
 
+### Compatibility
+
+I've tested on:
+
+* Linux
+* Windows 7
+* MacOS X
+
+In all cases the default USB HID driver on each system is suitable for use with the Jaguar USB Tap and enumerates correctly without additional drivers.
+
 ### Prerequisites
 
 Requires an ARM toolchain:
