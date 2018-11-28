@@ -6,7 +6,7 @@ The [controller](https://atariage.com/controller_page.html?ControllerID=21&Syste
 
 ## Hardware
 
-The hardware is developed using the open-source schematic and PCB design tool [KiCad](http://kicad-pcb.org/). It shall sport an [STM32F070](http://www.st.com/en/microcontrollers/stm32f070cb.html) ARM Cortex M0 micro-controller which shall handle input from the Jaguar gamepad and generate appropriate USB HID signalling.
+The hardware was developed using the open-source schematic and PCB design tool [KiCad](http://kicad-pcb.org/). It sports an [STM32F070](http://www.st.com/en/microcontrollers/stm32f070cb.html) ARM Cortex M0 micro-controller which shall handle input from the Jaguar gamepad and generate appropriate USB HID signalling.
 
 ![Assembled Jaguar USB Tap](./preview/close-up.jpg)
 
@@ -26,7 +26,9 @@ I've tested on:
 
 In all cases the default USB HID driver on each system is suitable for use with the Jaguar USB Tap and enumerates correctly without additional drivers.
 
-### Prerequisites
+### Building
+
+#### Prerequisites
 
 Requires an ARM toolchain:
 
@@ -40,8 +42,7 @@ On Debian/Ubuntu:
 ```
 $ sudo apt-get install gcc-arm-none-eabi gdb-arm-none-eabi openocd
 ```
-
-### Building
+#### Make targets
 
 To build the application:
 
